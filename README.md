@@ -1,5 +1,17 @@
 ## 使用scrapy框架去爬取淘宝数据
 
+学习了信息检索这么课最大的感悟就是获取数据的能力增加了。之前想获取什么数据集第一想法是去互联网上查询，现在就是想能不能自己爬取下来用。
+
+系统学习了爬虫的相关知识，掌握了scrapy框架的使用。并且学习了selenium自动化操作框架。
+
+实战以淘宝为例，爬取淘宝的商品信息：
+
+![image-20230521175138237](https://oss-img-fxk.oss-cn-beijing.aliyuncs.com/markdown/image-20230521175138237.png)
+
+最终获得了
+
+- 2000条关键词下300多万条商品信息。
+
 ### 1 使用selenium驱动谷歌浏览器
 
 需要下载对应版本的驱动
@@ -17,6 +29,8 @@ WEBDRIVER_PATH就是驱动的路径
 
 ### 2 模拟用户登录获取cookies
 
+![image-20230521174901004](https://oss-img-fxk.oss-cn-beijing.aliyuncs.com/markdown/image-20230521174901004.png)
+
 ```
 Demo20.py
 ```
@@ -28,6 +42,8 @@ Demo20.py
 - 将登录之后获取的cookie放到taobao.json中
 
 ### 3 使用scrapy解析页面
+
+![image-20230521174623420](https://oss-img-fxk.oss-cn-beijing.aliyuncs.com/markdown/image-20230521174623420.png)
 
 #### 3.1 middlewares中使用下载中间件--解决爬的次数多了需要滑块验证
 
@@ -84,7 +100,7 @@ class TaobaoItem(scrapy.Item):
     item_type = scrapy.Field()  # 商品种类
 ```
 
-![image-20230425152726124](https://oss-img-fxk.oss-cn-beijing.aliyuncs.com/markdown/image-20230425152726124.png)
+![image-20230510102207873](https://oss-img-fxk.oss-cn-beijing.aliyuncs.com/markdown/image-20230510102207873.png)
 
 #### 3.4 popelines将itmes输出到数据库中
 
@@ -126,9 +142,7 @@ re_font使用正则表达式使字符串只剩下汉字
 read_keywords读取关键字并返回关键字列表
 ```
 
-
-
-### 4.使用项目
+### 4.用到的类包
 
 - requestments.txt中包含项目中所用到的类包以及版本
 
@@ -149,3 +163,7 @@ read_keywords读取关键字并返回关键字列表
   USER_PASSWORD = ""
   填上自己的信息
   ```
+
+### 5.源代码
+
+源代码已经上传到github，地址：https://github.com/Fxk2020/clawerTaobao。
