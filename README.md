@@ -10,7 +10,10 @@
 
 最终获得了
 
-- 2000条关键词下300多万条商品信息。
+- 1093条关键词下180多万条商品信息。（本来想爬取2000条关键词的但是时间来不及了）
+- ![image-20230521195310009](https://oss-img-fxk.oss-cn-beijing.aliyuncs.com/markdown/image-20230521195310009.png)
+- ![image-20230521195322406](https://oss-img-fxk.oss-cn-beijing.aliyuncs.com/markdown/image-20230521195322406.png)
+- ![image-20230521195259653](https://oss-img-fxk.oss-cn-beijing.aliyuncs.com/markdown/image-20230521195259653.png)
 
 ### 1 使用selenium驱动谷歌浏览器
 
@@ -167,3 +170,7 @@ read_keywords读取关键字并返回关键字列表
 ### 5.源代码
 
 源代码已经上传到github，地址：https://github.com/Fxk2020/clawerTaobao。
+
+### 6.对爬取的数据进行分析
+
+放到了自己的github上：https://github.com/Fxk2020/taobaoPythonAnalysis
